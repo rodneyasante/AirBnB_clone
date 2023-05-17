@@ -1340,7 +1340,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         testCmd += "{'attr_name': 'attr_value'}"
         HBNBCommand().onecmd(testCmd)
         test_dict = storage.all()["BaseModel.{}".format(testId)].__dict__
-        self.assertEqual("attr_value", test_dict["attr_name"])
+        self.assertEqual("attr_value", test_dict['attr_name'])
 
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create User")
@@ -1404,7 +1404,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         testCmd += "{'attr_name': 'attr_value'})"
         HBNBCommand().onecmd(testCmd)
         test_dict = storage.all()["BaseModel.{}".format(testId)].__dict__
-        self.assertEqual("attr_value", test_dict["attr_name"])
+        self.assertEqual("attr_value", test_dict['attr_name'])
 
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create User")
@@ -1498,7 +1498,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         testCmd += "{'latitude': 9.8})"
         HBNBCommand().onecmd(testCmd)
         test_dict = storage.all()["Place.{}".format(testId)].__dict__
-        self.assertEqual(9.8, test_dict["latitude"])
+        self.assertEqual(9.8, test_dict['latitude'])
 
 
 class TestHBNBCommand_count(unittest.TestCase):
